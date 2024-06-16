@@ -1,0 +1,17 @@
+#/src/androidTest
+#/src/test
+#*.iml
+#/.externalNativeBuild
+#.DS_Store
+#*.apk
+#*.json
+
+/*
+!/libs
+!/src
+!build.gradle.kts
+!Debug.jks
+!proguard-rules.pro
+!CMakeLists.txt
+
+
