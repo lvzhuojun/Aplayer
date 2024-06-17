@@ -7,7 +7,7 @@
 
   <color name="white">#ffffff</color>
   <color name="black">#000000</color>
-
+  <color name="colorPrimaryDark">#698BF5</color>
 
   <color name="appwidget_title_color_white_1f">#252525</color>
   <color name="appwidget_title_color_transparent">#ffffff</color>
@@ -19,8 +19,10 @@
   <color name="appwidget_btn_color_transparent">#ffffff</color>
   <color name="appwidget_background_color">#f9f9f9</color>
   <color name="appwidget_track_color">#e3e3e3</color>
-  <color name="appwidget_track_start_color">#96b9ff</color>
-  <color name="appwidget_track_end_color">#5179f5</color>
+<!--  111-->
+  <color name="appwidget_track_start_color">#FF9696</color>
+  <color name="appwidget_track_end_color">#F55151</color>
+<!--  111-->
   <color name="appwidget_big_bar_color">#4f000000</color>
 
   <!--New Start-->
@@ -105,7 +107,9 @@
 
   <color name="md_plum_primary">#db5a6b</color>
 
-  <color name="md_blue_primary">#698CF6</color>
+<!--  11111-->
+  <color name="md_blue_primary">#F66969</color>
+<!-- 111-->
 
   <color name="md_white_primary">#fefefe</color>
 
