@@ -90,11 +90,7 @@ class MultipleChoice<T>(activity: Activity, val type: Int) {
             ids.addAll((it as Folder).getSongIds())
           }
         }
-        Constants.GENRE -> {
-          checkParam.forEach {
-            ids.addAll((it as Genre).getSongIds())
-          }
-        }
+
       }
       ids
     }
@@ -128,11 +124,6 @@ class MultipleChoice<T>(activity: Activity, val type: Int) {
       Constants.FOLDER -> {
         checkParam.forEach {
           ids.addAll((it as Folder).getSongIds())
-        }
-      }
-      Constants.GENRE -> {
-        checkParam.forEach {
-          ids.addAll((it as Genre).getSongIds())
         }
       }
     }
@@ -357,8 +348,7 @@ class MultipleChoice<T>(activity: Activity, val type: Int) {
   }
 
   private fun isLibraryAdapter(): Boolean {
-    return (adapter is SongAdapter || adapter is AlbumAdapter || adapter is ArtistAdapter || adapter is GenreAdapter
-        || adapter is PlayListAdapter || adapter is ChildHolderAdapter)
+    return (adapter is SongAdapter || adapter is AlbumAdapter || adapter is ArtistAdapter || adapter is PlayListAdapter || adapter is ChildHolderAdapter)
   }
 
   private fun closeIfNeed() {
@@ -399,9 +389,6 @@ class MultipleChoice<T>(activity: Activity, val type: Int) {
     popup!!.binding.multiClose.setOnClickListener { close() }
     popup!!.binding.multiPlaylist.setOnClickListener { addToPlayList() }
     popup!!.binding.multiQueue.setOnClickListener { addToPlayQueue() }
-    if (type == Constants.GENRE) {
-      popup!!.binding.multiDelete.visibility = View.GONE
-    }
     popup!!.binding.multiDelete.setOnClickListener { delete() }
     popup!!.binding.multiMore.setOnClickListener {
       PopupMenu(activity, popup!!.binding.multiMore).run {

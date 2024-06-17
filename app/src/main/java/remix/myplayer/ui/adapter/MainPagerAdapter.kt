@@ -10,9 +10,6 @@ import remix.myplayer.ui.fragment.*
 import java.lang.IllegalArgumentException
 import java.lang.ref.WeakReference
 
-/**
- * Created by Remix on 2018/1/10.
- */
 class MainPagerAdapter(private val fm: FragmentManager) : FragmentPagerAdapter(fm) {
   private var libraries: List<Library> = ArrayList()
   private val fragmentMap: MutableMap<Int, WeakReference<Fragment?>> = HashMap()
@@ -52,8 +49,7 @@ class MainPagerAdapter(private val fm: FragmentManager) : FragmentPagerAdapter(f
     }
     val (_, _, className) = libraries[position]
     for (fragment in fm.fragments) {
-      if (fragment is LibraryFragment<*, *, *> && (fragment.javaClass.name
-              == className)) {
+      if (fragment is LibraryFragment<*, *, *> && (fragment.javaClass.name == className)) {
         return fragment
       }
     }
@@ -73,17 +69,13 @@ class MainPagerAdapter(private val fm: FragmentManager) : FragmentPagerAdapter(f
     }
     val (tag) = libraries[position]
 
-    val fragment = when(tag) {
+    val fragment = when (tag) {
       Library.TAG_SONG -> SongFragment()
       Library.TAG_ALBUM -> AlbumFragment()
       Library.TAG_ARTIST -> ArtistFragment()
-      Library.TAG_GENRE -> GenreFragment()
       Library.TAG_PLAYLIST -> PlayListFragment()
-      Library.TAG_FOLDER -> FolderFragment()
-      Library.TAG_CLOUD -> RemoteFragment()
-      else -> throw IllegalArgumentException("unknown library: ${libraries[position]}")
+      else -> throw IllegalArgumentException("unknown library tag in getItem: $tag")
     }
-//    val fragment: Fragment = if (tag == Library.TAG_SONG) SongFragment() else if (tag == Library.TAG_ALBUM) AlbumFragment() else if (tag == Library.TAG_ARTIST) ArtistFragment() else if (tag == Library.TAG_PLAYLIST) PlayListFragment() else FolderFragment()
     val newWeakReference = WeakReference(fragment as Fragment)
     fragmentMap[position] = newWeakReference
     return fragment
@@ -121,7 +113,8 @@ class MainPagerAdapter(private val fm: FragmentManager) : FragmentPagerAdapter(f
   var list: List<Library>
     get() = libraries
     set(categories) {
-      libraries = categories
+      // 过滤掉无效的 tag 值
+      libraries = categories.filter { it.tag in Library.TAG_SONG..Library.TAG_PLAYLIST }
       alignCache()
     }
 
@@ -131,9 +124,5 @@ class MainPagerAdapter(private val fm: FragmentManager) : FragmentPagerAdapter(f
 
   override fun getCount(): Int {
     return libraries.size
-  }
-
-  companion object {
-    private const val TAG = "MainPagerAdapter"
   }
 }

@@ -299,8 +299,6 @@ class MainActivity : MenuActivity(), View.OnClickListener {
       Library.TAG_ALBUM -> R.menu.menu_album
       Library.TAG_ARTIST -> R.menu.menu_artist
       Library.TAG_PLAYLIST -> R.menu.menu_playlist
-//      Library.TAG_GENRE -> R.menu.menu_genre
-      Library.TAG_FOLDER -> R.menu.menu_folder
       else -> R.menu.menu_main_simple
     }
   }
@@ -321,9 +319,6 @@ class MainActivity : MenuActivity(), View.OnClickListener {
       is ArtistFragment -> sortOrder = SPUtil
           .getValue(this, SPUtil.SETTING_KEY.NAME, SPUtil.SETTING_KEY.ARTIST_SORT_ORDER,
               SortOrder.ARTIST_A_Z)
-      is GenreFragment -> sortOrder = SPUtil
-        .getValue(this, SPUtil.SETTING_KEY.NAME, SPUtil.SETTING_KEY.GENRE_SORT_ORDER,
-          SortOrder.GENRE_A_Z)
       is PlayListFragment -> sortOrder = SPUtil
           .getValue(this, SPUtil.SETTING_KEY.NAME, SPUtil.SETTING_KEY.PLAYLIST_SORT_ORDER,
               SortOrder.PLAYLIST_DATE)
@@ -351,8 +346,6 @@ class MainActivity : MenuActivity(), View.OnClickListener {
           sortOrder)
       is PlayListFragment -> SPUtil.putValue(this, SPUtil.SETTING_KEY.NAME, SPUtil.SETTING_KEY.PLAYLIST_SORT_ORDER,
           sortOrder)
-      is GenreFragment -> SPUtil.putValue(this, SPUtil.SETTING_KEY.NAME, SPUtil.SETTING_KEY.GENRE_SORT_ORDER,
-        sortOrder)
     }
     if (currentFragment is LibraryFragment<*, *, *>) {
       (currentFragment as LibraryFragment<*, *, *>?)?.onMediaStoreChanged()

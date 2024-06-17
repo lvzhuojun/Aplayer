@@ -179,10 +179,6 @@ abstract class HeaderAdapter<Data, ViewHolder : RecyclerView.ViewHolder>(
         SPUtil.SETTING_KEY.MODE_FOR_ARTIST
       }
 
-      is GenreAdapter -> {
-        SPUtil.SETTING_KEY.MODE_FOR_GENRE
-      }
-
       is PlayListAdapter -> {
         SPUtil.SETTING_KEY.MODE_FOR_PLAYLIST
       }

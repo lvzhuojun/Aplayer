@@ -56,8 +56,6 @@ class LibraryListener(private val context: Context,
             .blockingGet()
         //文件夹
         Constants.FOLDER -> getSongsByParentPath(model.getKey()).map { it.id }
-        //流派
-        Constants.GENRE -> (model as Genre).getSongIds()
         else -> emptyList()
       }
     }

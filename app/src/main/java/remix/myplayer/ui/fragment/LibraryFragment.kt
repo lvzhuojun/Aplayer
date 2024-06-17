@@ -39,7 +39,6 @@ abstract class LibraryFragment<Data, A : BaseAdapter<Data, *>, VB: ViewBinding> 
       is AlbumFragment -> Constants.ALBUM
       is ArtistFragment -> Constants.ARTIST
       is PlayListFragment -> Constants.PLAYLIST
-      is GenreFragment -> Constants.GENRE
       else -> Constants.FOLDER
     }
     multiChoice = MultipleChoice(requireActivity(), type)
