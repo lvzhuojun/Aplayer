@@ -6,6 +6,9 @@ ksp = "1.9.23-1.0.19"
 glide = "4.16.0"
 retrofit = "2.11.0"
 room = "2.6.1"
+annotation = "1.6.0"
+lifecycleLivedataKtx = "2.6.1"
+lifecycleViewmodelKtx = "2.6.1"
 
 
 [plugins]
@@ -64,3 +67,6 @@ slf4j = { group = "org.slf4j", name = "slf4j-api", version = "2.0.13" }
 timber = { group = "com.jakewharton.timber", name = "timber", version = "5.0.1" }
 # noinspection GradleDependency
 tinypinyin = { group = "io.github.biezhi", name = "TinyPinyin", version = "2.0.3.RELEASE" }
+annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }

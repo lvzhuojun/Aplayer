@@ -50,7 +50,6 @@ public class StatusBarUtil {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
       return;
     }
-    //非miui 非魅族 非6.0以上 需要改变颜色
     if (!Build.MANUFACTURER.equalsIgnoreCase("Meizu") && !Build.MANUFACTURER
         .equalsIgnoreCase("Xiaomi") &&
         Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {

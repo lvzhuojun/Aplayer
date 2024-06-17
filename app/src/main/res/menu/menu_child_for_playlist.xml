@@ -48,12 +48,6 @@
     </menu>
   </item>
   <item
-    android:id="@+id/action_timer"
-    android:icon="@drawable/ic_timer_white_24dp"
-    android:title="@string/timer_close"
-    android:orderInCategory="80"
-    app:showAsAction="ifRoom"/>
-  <item
     android:id="@+id/action_search"
     android:icon="@drawable/ic_search_white_24dp"
     android:title="@string/search"

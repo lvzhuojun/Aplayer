@@ -232,6 +232,9 @@ dependencies {
     implementation(libs.material)
 
     implementation(libs.glide)
+    implementation(libs.annotation)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
     ksp(libs.glide.ksp)
 
     implementation(libs.retrofit)

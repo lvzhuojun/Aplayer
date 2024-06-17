@@ -26,10 +26,6 @@ abstract class MenuActivity : ToolbarActivity() {
     if (item.itemId == R.id.action_search) {
       startActivity(Intent(this, SearchActivity::class.java))
       return true
-    } else if (item.itemId == R.id.action_timer) {
-//      TimerDialog.newInstance()
-//          .show(supportFragmentManager, TimerDialog::class.java.simpleName)
-      return true
     } else if (item.itemId == R.id.action_close) {
       finish()
     } else {

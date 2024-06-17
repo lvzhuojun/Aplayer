@@ -85,8 +85,6 @@ abstract class BaseAppwidget
     views.setOnClickPendingIntent(R.id.appwidget_next, buildServicePendingIntent(context, componentNameForService, Command.NEXT))
     views.setOnClickPendingIntent(R.id.appwidget_model, buildServicePendingIntent(context, componentNameForService, Command.CHANGE_MODEL))
     views.setOnClickPendingIntent(R.id.appwidget_love, buildServicePendingIntent(context, componentNameForService, Command.LOVE))
-    views.setOnClickPendingIntent(R.id.appwidget_timer, buildServicePendingIntent(context, componentNameForService, Command.TOGGLE_TIMER))
-
     val action = Intent(context, MainActivity::class.java)
     action.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
     views.setOnClickPendingIntent(R.id.appwidget_clickable, PendingIntent.getActivity(context, 0, action, getPendingIntentFlag()))
@@ -126,12 +124,8 @@ abstract class BaseAppwidget
     updateModel(service, remoteViews)
     updateNextAndPrev(remoteViews)
     updateProgress(service, remoteViews, song)
-    updateTimer(remoteViews)
   }
 
-  private fun updateTimer(remoteViews: RemoteViews) {
-    remoteViews.setImageViewResource(R.id.appwidget_timer, skin.timerRes)
-  }
 
   private fun updateProgress(service: MusicService, remoteViews: RemoteViews, song: Song) {
     //设置时间

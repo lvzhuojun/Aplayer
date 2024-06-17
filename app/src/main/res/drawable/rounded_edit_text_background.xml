@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#BA4870EA" />
+    <stroke
+        android:width="2dp"
+        android:color="#BA4870EA" />
+    <corners android:radius="24dp" /> <!-- 设置圆角半径为24dp，如果需要更圆，可以调大此值 -->
+    <padding
+        android:left="10dp"
+        android:top="10dp"
+        android:right="10dp"
+        android:bottom="10dp" />
+</shape>

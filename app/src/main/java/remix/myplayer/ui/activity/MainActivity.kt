@@ -157,36 +157,8 @@ class MainActivity : MenuActivity(), View.OnClickListener {
     // 清除多选显示状态
     MultipleChoice.isActiveSomeWhere = false
 
-    // 捐赠
-    checkDonation()
   }
 
-  private fun checkDonation(){
-    if (!SPUtil.getValue(this, SPUtil.OTHER_KEY.NAME, SPUtil.OTHER_KEY.SUPPORT_NO_MORE_PROMPT, false) &&
-        !SPUtil.getValue(this, SPUtil.OTHER_KEY.NAME, SPUtil.OTHER_KEY.WAS_SUPPORT, false)) {
-
-      val lastOpenTime = SPUtil.getValue(this, SPUtil.OTHER_KEY.NAME, SPUtil.OTHER_KEY.LAST_OPEN_TIME, System.currentTimeMillis())
-      SPUtil.putValue(this, SPUtil.OTHER_KEY.NAME, SPUtil.OTHER_KEY.LAST_OPEN_TIME, System.currentTimeMillis())
-      if (System.currentTimeMillis() - lastOpenTime >= TimeUnit.DAYS.toMillis(2)) {
-        handler.postDelayed({
-          Theme.getBaseDialog(this)
-            .title(R.string.support_developer)
-            .positiveText(R.string.go)
-            .negativeText(R.string.cancel)
-            .neutralText(R.string.no_more_prompt)
-            .content(R.string.donate_tip)
-            .onPositive { _, _ ->
-              SPUtil.putValue(this, SPUtil.OTHER_KEY.NAME, SPUtil.OTHER_KEY.WAS_SUPPORT, true)
-              startActivity(Intent(this, SupportActivity::class.java))
-            }
-            .onNeutral { _, _ ->
-              SPUtil.putValue(this, SPUtil.OTHER_KEY.NAME, SPUtil.OTHER_KEY.SUPPORT_NO_MORE_PROMPT, true)
-            }
-            .show()
-        }, 1500)
-      }
-    }
-  }
 
   override fun setStatusBarColor() {
     StatusBarUtil.setColorNoTranslucentForDrawerLayout(this,
@@ -438,8 +410,6 @@ class MainActivity : MenuActivity(), View.OnClickListener {
           1 -> startActivity(Intent(this@MainActivity, HistoryActivity::class.java))
           //最近添加
           2 -> startActivity(Intent(this@MainActivity, RecentlyActivity::class.java))
-          //捐赠
-          3 -> startActivity(Intent(this@MainActivity, SupportActivity::class.java))
           //设置
           4 -> startActivityForResult(Intent(this@MainActivity, SettingActivity::class.java), REQUEST_SETTING)
           //退出

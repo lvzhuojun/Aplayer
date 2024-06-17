@@ -18,7 +18,6 @@ import remix.myplayer.service.Command
 import remix.myplayer.theme.Theme.getBaseDialog
 import remix.myplayer.ui.activity.PlayerActivity
 import remix.myplayer.ui.dialog.AddtoPlayListDialog
-import remix.myplayer.ui.dialog.TimerDialog
 import remix.myplayer.ui.misc.AudioTag
 import remix.myplayer.util.MusicUtil
 import remix.myplayer.util.RxUtil.applySingleScheduler

@@ -8,7 +8,6 @@ interface LoaderIds {
     const val FRAGMENT_SONG = 1
     const val FRAGMENT_ALBUM = 2
     const val FRAGMENT_ARTIST = 3
-    const val FRAGMENT_GENRE = 11
     const val FRAGMENT_PLAYLIST = 4
     const val FRAGMENT_FOLDER = 5
     const val ACTIVITY_RECENTLY = 6
