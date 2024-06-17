@@ -16,9 +16,9 @@
     <item
       android:title="@string/add_to_playlist"
       android:id="@+id/menu_add_to_playlist"/>
-    <item
-      android:title="@string/sleep_timer"
-      android:id="@+id/menu_timer"/>
+<!--    <item-->
+<!--      android:title="@string/sleep_timer"-->
+<!--      android:id="@+id/menu_timer"/>-->
     <item
       android:title="@string/eq"
       android:id="@+id/menu_eq"/>
@@ -28,8 +28,6 @@
     <item
       android:id="@+id/menu_speed"
       android:title="@string/speed"/>
-    <!--<item android:title="音量调节"-->
-    <!--android:id="@+id/menu_vol"/>-->
     <item
       android:title="@string/delete"
       android:id="@+id/menu_delete"/>

@@ -8,7 +8,7 @@ import android.view.MenuItem
 import remix.myplayer.R
 import remix.myplayer.helper.SortOrder
 import remix.myplayer.theme.ToolbarContentTintHelper
-import remix.myplayer.ui.dialog.TimerDialog
+
 
 /**
  * @ClassName
@@ -27,8 +27,8 @@ abstract class MenuActivity : ToolbarActivity() {
       startActivity(Intent(this, SearchActivity::class.java))
       return true
     } else if (item.itemId == R.id.action_timer) {
-      TimerDialog.newInstance()
-          .show(supportFragmentManager, TimerDialog::class.java.simpleName)
+//      TimerDialog.newInstance()
+//          .show(supportFragmentManager, TimerDialog::class.java.simpleName)
       return true
     } else if (item.itemId == R.id.action_close) {
       finish()

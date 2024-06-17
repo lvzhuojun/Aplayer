@@ -121,10 +121,6 @@ class AudioPopupListener(activity: PlayerActivity, private val song: Song) :
       R.id.menu_detail -> {
         audioTag.detail()
       }
-      R.id.menu_timer -> {
-        val fm = activity.supportFragmentManager
-        TimerDialog.newInstance().show(fm, TimerDialog::class.java.simpleName)
-      }
       R.id.menu_eq -> {
         EQHelper.startEqualizer(activity)
       }
